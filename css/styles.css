@@ -7,6 +7,8 @@
   --bg-color-hero: #e5e5e5;
   --color-icon: #afb1b8;
   --color-icon-bg: #44454e;
+  --transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-duration: 250ms;
 }
 
 body {
@@ -103,6 +105,8 @@ img {
   line-height: 1.14;
   letter-spacing: 0.02em;
 
+  transition: var(--transition-duration) var(--transition-timing-function);
+
   color: var(--title-text-color);
 }
 .link-nav.current {
@@ -122,8 +126,10 @@ img {
   content: '';
   width: 100%;
   height: 4px;
+  left: 0;
+  bottom: 0;
 
-  background: #2196f3;
+  background: var(--accent-color);
   border-radius: 2px;
 }
 
@@ -148,6 +154,8 @@ img {
   font-weight: 500;
   font-size: 14px;
   line-height: 1.14;
+
+  transition: var(--transition-duration) var(--transition-timing-function);
 
   color: var(--primary-text-color);
 }
@@ -301,9 +309,34 @@ img {
   display: flex;
 }
 .tasks .task-item + .task-item {
-  padding-left: 30px;
+  margin-left: var(--card-set-gap);
 }
+.task-item {
+  position: relative;
+}
+.text-box {
+  position: absolute;
+  content: '';
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 70px;
+  left: 0;
+  bottom: 0;
 
+  background-color: rgb(47, 48, 58, 0.8);
+}
+.text {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  text-align: center;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+
+  color: #ffffff;
+}
 /* Наша команда */
 .team {
   background: #f5f4fa;
@@ -380,9 +413,11 @@ img {
 
   width: 44px;
   height: 44px;
-
   cursor: pointer;
   border-radius: 50%;
+
+  transition: var(--transition-duration) var(--transition-timing-function);
+
   background-color: #ffffff;
   color: var(--color-icon);
 }
@@ -415,6 +450,9 @@ img {
   cursor: pointer;
   border: 1px solid #afb1b8;
   border-radius: 4px;
+
+  transition: var(--transition-duration) var(--transition-timing-function);
+
   color: var(--color-icon);
 }
 .client-link:hover,
@@ -506,8 +544,11 @@ img {
   align-items: center;
   width: 40px;
   height: 40px;
-  background-color: var(--color-icon-bg);
   border-radius: 50%;
+
+  transition: var(--transition-duration) var(--transition-timing-function);
+
+  background-color: var(--color-icon-bg);
 }
 .network-icon {
   fill: #ffffff;
@@ -535,6 +576,8 @@ img {
   border: none;
   padding: 6px 22px;
   cursor: pointer;
+
+  transition: var(--transition-duration) var(--transition-timing-function);
 
   color: var(--title-text-color);
   background-color: var(--background-clr-btn);
@@ -602,7 +645,12 @@ img {
 
   color: var(--primary-text-color);
 }
-.link-card:hover {
+.link-card {
+  transition: var(--transition-duration) var(--transition-timing-function);
+}
+
+.link-card:hover,
+.link-card:focus {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
 }
