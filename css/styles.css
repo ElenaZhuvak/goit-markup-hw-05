@@ -233,6 +233,10 @@ img {
 
   animation: animate-btn 3000ms infinite 1000ms;
 }
+.button:hover,
+.button:focus {
+  background-color: #188ce8;
+}
 @keyframes animate-btn {
   0% {
     transform: scale(1);
@@ -727,7 +731,8 @@ img {
 
   color: #ffffff;
 }
-.link-card:hover .text-transform {
+.link-card:hover .text-transform,
+.link-card:focus .text-transform {
   transform: translateY(-100%);
   opacity: 1;
 }
