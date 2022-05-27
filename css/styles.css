@@ -256,6 +256,7 @@ img {
   left: 0;
   width: 100%;
   height: 100%;
+  z-index: 3;
 
   background-color: rgba(0, 0, 0, 0.1);
 
@@ -265,55 +266,6 @@ img {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
-}
-.modal-wrapper {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-
-  width: 528px;
-  height: 581px;
-  border-radius: 3px;
-
-  background-color: #ffffff;
-
-  animation-name: changeBgColor;
-  animation-duration: 4000ms;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
-  animation-delay: 250ms;
-}
-@keyframes changeBgColor {
-  0% {
-    background-color: rgb(255, 255, 255);
-  }
-
-  50% {
-    background-color: rgb(159, 198, 243);
-  }
-
-  100% {
-    background-color: rgb(170, 241, 238);
-  }
-}
-.modal-btn {
-  position: absolute;
-  top: 8px;
-  right: 8px;
-  width: 30px;
-  height: 30px;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0;
-
-  cursor: pointer;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  border-radius: 50%;
-  background-color: transparent;
 }
 
 /* Основные задачи Веб-Студии */
@@ -644,6 +596,59 @@ img {
 .network:not(last-child) {
   margin-right: 10px;
 }
+
+/* Модальное окно */
+
+.modal-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 528px;
+  height: 581px;
+  border-radius: 3px;
+
+  background-color: #ffffff;
+
+  animation-name: changeBgColor;
+  animation-duration: 4000ms;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-delay: 250ms;
+}
+@keyframes changeBgColor {
+  0% {
+    background-color: rgb(255, 255, 255);
+  }
+
+  50% {
+    background-color: rgb(159, 198, 243);
+  }
+
+  100% {
+    background-color: rgb(170, 241, 238);
+  }
+}
+.modal-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 30px;
+  height: 30px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+
+  cursor: pointer;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  background-color: transparent;
+}
+
 /* Кнопки фильтра портфолио */
 
 .button-filter {
