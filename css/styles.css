@@ -671,6 +671,7 @@ img {
   color: var(--title-text-color);
   background-color: var(--background-clr-btn);
 }
+.current-btn,
 .button-filter:hover,
 .button-filter:focus {
   color: #ffffff;
